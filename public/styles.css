@@ -219,7 +219,7 @@ textarea { resize: vertical; }
   white-space: nowrap;
 }
 .modal-idea-item:hover { border-color: var(--accent); }
-.modal-idea-item.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.modal-idea-item.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 /* ---------- History ---------- */
 .history-list { display: flex; flex-direction: column; gap: 14px; }
