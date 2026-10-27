@@ -54,6 +54,22 @@ Then open <http://localhost:4321>.
 
 To change the port: `PORT=5000 node server.js`.
 
+## Docker
+
+```bash
+docker build -t event-tracker .
+docker run -d --name event-tracker -p 4321:4321 \
+  -v event-tracker-data:/data \
+  -e TMDB_API_KEY=your_tmdb_bearer_token_here \
+  event-tracker
+```
+
+The database lives in `/data` inside the container (`DB_PATH` defaults to
+`/data/event-tracker.db` in the image), so mount a volume or folder there to
+keep your data. The container runs as the non-root `node` user (uid 1000), so
+a bind-mounted folder must be writable by that uid. As with a normal run, the
+app has no authentication — keep it on your local network.
+
 ## Tests
 
 ```bash

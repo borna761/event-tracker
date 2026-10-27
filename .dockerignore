@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.claude
+node_modules
+test
+scripts
+migration-testdata
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+Dockerfile
+.dockerignore
