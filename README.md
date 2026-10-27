@@ -70,6 +70,10 @@ keep your data. The container runs as the non-root `node` user (uid 1000), so
 a bind-mounted folder must be writable by that uid. As with a normal run, the
 app has no authentication — keep it on your local network.
 
+Every push to `main` builds the image (linux/amd64) and publishes it to
+`ghcr.io/borna761/event-tracker` as `latest` and by commit SHA, so a server can
+run `image: ghcr.io/borna761/event-tracker:latest` instead of building locally.
+
 ## Tests
 
 ```bash
